@@ -1,8 +1,19 @@
 ---
 
-- name: Update cache and install Nginx
+- name: Update cache and install nginx
   ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: 86400
     name: nginx
     state: latest
+
+- name: Import /etc/nginx/conf.d/ file
+  ansible.builtin.copy:
+    src: main.conf
+    dest: /etc/nginx/conf.d/main.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+  - Restart nginx
+
