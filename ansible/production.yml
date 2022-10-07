@@ -1,0 +1,6 @@
+---
+
+all:
+  hosts:
+    tanguynicolas.fr:
+

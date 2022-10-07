@@ -1,0 +1,4 @@
+---
+
+ssh_users:
+  tanguy: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMtL/DHT/WJVbfV0kqZpnBGGEAaxkz+r6MeHjAvYixv tn@manja'

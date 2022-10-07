@@ -1,0 +1,17 @@
+---
+
+- name: Upgrade all packages
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 86400
+    upgrade: yes
+
+- name: Install some packages
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 86400
+    state: latest
+    pkg:
+    - vim
+    - tree
+    - sl

@@ -7,9 +7,9 @@ Le déploiement de configuration via Ansible suppose que :
 Pour installer Ansible :
 `python3 -m venv .pyenv`
 `source .pyenv/bin/activate`
-`python3 -m pip install --user ansible==6.4`
+`python3 -m pip install ansible==6.4`
 Pour utiliser l'evironnement :
 `source .pyenv/bin/activate`
 Pour arrêter d'utiliser l'environnement :
-`source .pyenv/bin/deactivate`
+`deactivate`
 

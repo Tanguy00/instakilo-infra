@@ -1,0 +1,17 @@
+---
+
+- name: Import /etc/ssh/sshd_config.d/ file
+  ansible.builtin.copy:
+    src: main.conf
+    dest: /etc/ssh/sshd_config.d/main.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+  - Restart openssh
+
+- name: "Add authorized keys"
+  authorized_key:
+    user: 'rpi'
+    key: "{{ item.value }}"
+  loop: "{{ ssh_users | dict2items }}"

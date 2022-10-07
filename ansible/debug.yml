@@ -1,0 +1,11 @@
+---
+
+- name: for debuging
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+  - name: sending hello world to all hosts
+    ansible.builtin.debug:
+      msg: "{{ lookup('file', files/*.pub') }}"
