@@ -1,7 +1,7 @@
 Le déploiement de configuration via Ansible suppose que :
  - Le serveur d'Instakilo est bien installé, ainsi que sa configuration IP ;
  - Vous accédez au serveur via `ssh <domain_name>`, et votre ~/.ssh/config est correctement configuré ;
- - Vous avez une version récente de Python.
+ - Vous avez une version récente de Python et le module Pip.
 
 À la racine du dépôt instakilo-infra ou dans son dossier ansible.
 Pour installer Ansible :
