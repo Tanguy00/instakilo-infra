@@ -3,7 +3,7 @@ Le déploiement de configuration via Ansible suppose que :
  - Vous accédez au serveur via `ssh <domain_name>`, et votre ~/.ssh/config est correctement configuré ;
  - Vous avez une version récente de Python.
 
-À la racine du dépôt instakilo-infra
+À la racine du dépôt instakilo-infra ou dans son dossier ansible.
 Pour installer Ansible :
 `python3 -m venv .pyenv`
 `source .pyenv/bin/activate`
