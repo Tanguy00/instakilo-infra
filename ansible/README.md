@@ -1,3 +1,15 @@
 Le déploiement de configuration via Ansible suppose que :
  - Le serveur d'Instakilo est bien installé, ainsi que sa configuration IP ;
- - Vous accédez au serveur via `ssh <domain_name>`, et votre ~/.ssh/config est correctement configuré.
+ - Vous accédez au serveur via `ssh <domain_name>`, et votre ~/.ssh/config est correctement configuré ;
+ - Vous avez une version récente de Python.
+
+À la racine du dépôt instakilo-infra
+Pour installer Ansible :
+`python3 -m venv .pyenv`
+`source .pyenv/bin/activate`
+`python3 -m pip install --user ansible`
+Pour utiliser l'evironnement :
+`source .pyenv/bin/activate`
+Pour arrêter d'utiliser l'environnement :
+`source .pyenv/bin/deactivate`
+
