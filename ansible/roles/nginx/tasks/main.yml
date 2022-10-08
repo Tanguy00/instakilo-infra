@@ -17,3 +17,13 @@
   notify:
   - Restart nginx
 
+- name: Delete content & directory
+  file:
+    state: absent
+    path: "{{ item }}"
+  loop:
+    - /var/www/html
+    - /etc/nginx/sites-available/default
+    - /etc/nginx/sites-enabled/default
+  notify:
+  - Restart nginx
