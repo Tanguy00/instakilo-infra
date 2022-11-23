@@ -1,9 +1,8 @@
 Le déploiement de configuration via Ansible suppose que :
  - Le serveur d'Instakilo est bien installé, ainsi que sa configuration IP ;
  - Vous accédez au serveur via `ssh <domain_name>`, et votre ~/.ssh/config est correctement configuré ;
- - Vous avez une version récente de Python et le module Pip.
+ - Vous avez une version récente de Python.
 
-À la racine du dépôt instakilo-infra ou dans son dossier ansible.
 Pour installer Ansible :
 `python3 -m venv .pyenv`
 `source .pyenv/bin/activate`
@@ -13,3 +12,5 @@ Pour utiliser l'evironnement :
 Pour arrêter d'utiliser l'environnement :
 `deactivate`
 
+Pour lancer le playbook :
+`ansible-playbook raspberrypi.yml -i inventory.yml`
