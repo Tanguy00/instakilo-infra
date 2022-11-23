@@ -8,6 +8,4 @@
   roles:
   - common
   - openssh
-  - nginx
-  - instakilo-site
-  - {role: docker, tags: docker}
+  - docker
