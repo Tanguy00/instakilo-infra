@@ -1,0 +1,53 @@
+enable
+configure terminal
+
+no ip domain-lookup
+
+!# Nom d’hôte, message du jour
+hostname SW-CO-001
+ip domain-name upjv.fr
+banner motd #Toute utilisation non autorisee fera l'objet de poursuites judiciaires.#
+
+!# Désactivation de la négotiation automatique
+int range fa0/1 - 48
+switchport mode access
+switchport nonegotiate
+
+!# Désactivation des ports inutilisés et attribution du VLAN black hole
+vlan 404
+name BLACKHOLE
+
+int range fa0/4 - 48
+switchport mode access
+switchport access vlan 404
+
+!# Configuration d’un nouveau VLAN natif
+vlan 802
+name NATIF
+
+int range fa0/1 - 3
+switchport mode access
+switchport access vlan 802
+
+!# Définition des mots de passe, IP pour la SVI
+service password-encryption
+enable secret motdepasse
+
+int vlan802
+ip address 192.168.0.235 255.255.255.0
+
+!# Activation et configuration de port-security
+switchport port-security
+switchport port-security maximum 4
+
+!# Activation de la surveillance DHCP
+ip dhcp snooping
+int fa0/1
+ip dhcp snooping trust
+
+!# Activation de l’inspection ARP
+ip arp inspection
+
+!# Activation BPDU Guard et Port Fast
+spanning-tree portfast default
+spanning-tree portfast bpduguard default
