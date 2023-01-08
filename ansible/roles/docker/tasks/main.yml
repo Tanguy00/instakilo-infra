@@ -91,3 +91,12 @@
 
 - include_tasks: docker-users.yml
   when: at_least_one_user_to_modify is defined
+
+- name: Template a file to /etc/docker/deamon.json
+  ansible.builtin.template:
+    src: deamon.json.j2
+    dest: /etc/docker/deamon.json
+    owner: root
+    group: root
+    mode: '0755'
+
