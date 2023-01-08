@@ -24,3 +24,19 @@
     group: www-data
     mode: '0755'
 
+- name: Import bash aliases definition
+  ansible.builtin.copy:
+    src: bash_aliases
+    dest: /home/rpi/.bash_aliases
+    owner: rpi
+    group: rpi
+    mode: "0644"
+
+- name: Import systemd service definition for instakilo
+  ansible.builtin.copy:
+    src: instakilo.service
+    dest: /lib/systemd/system/instakilo.service
+    owner: root
+    group: root
+    mode: "0644"
+
