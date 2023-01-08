@@ -1,0 +1,15 @@
+[Unit]
+Description=Instakilo the web chat
+Requires=docker.service
+After=docker.service
+ConditionPathExists=/home/rpi/compose-pull_remote.yaml
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/home/rpi
+ExecStart=/usr/bin/docker compose --file compose-pull_remote.yaml up -d
+ExecStop=/usr/bin/docker compose --file compose-pull_remote.yaml stop
+
+[Install]
+WantedBy=multi-user.target
